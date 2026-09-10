@@ -60,17 +60,17 @@ Method B remains genuinely better when the task is **ill-defined or requires jud
 ## 4. Pros & Cons — Summarized
 
 **Method A — Deterministic Pipeline**
-- ✅ Predictable, auditable, cheap, fast, easy to test and debug
-- ✅ Safe default for anything involving real numbers/money
-- ❌ Rigid — can't adapt its own steps to an unexpected question
-- ❌ "Autonomous" is mostly automation, not genuine reasoning/adaptation
+- Predictable, auditable, cheap, fast, easy to test and debug
+- Safe default for anything involving real numbers/money
+- Rigid — can't adapt its own steps to an unexpected question
+- "Autonomous" is mostly automation, not genuine reasoning/adaptation
 
 **Method B — LLM Agent Loop**
-- ✅ Handles ambiguous, open-ended, multi-source research naturally
-- ✅ Can explain its own reasoning and adapt strategy mid-task
-- ❌ Non-deterministic — same query can behave differently across runs
-- ❌ Slower, costlier (multiple model calls), harder to guarantee correctness
-- ❌ Much harder to unit test or certify for compliance-sensitive output
+- Handles ambiguous, open-ended, multi-source research naturally
+- Can explain its own reasoning and adapt strategy mid-task
+- Non-deterministic — same query can behave differently across runs
+- Slower, costlier (multiple model calls), harder to guarantee correctness
+- Much harder to unit test or certify for compliance-sensitive output
 
 ---
 
@@ -87,12 +87,3 @@ Choosing Method A isn't the end of the design work — the pipeline itself can b
 
 ---
 
-## 6. Summary of Approach
-
-1. **Understand the problem** before building — an open title needs a concrete, high-stakes case chosen deliberately (financial calculation → correctness matters most).
-2. **Identify the real design fork** — not "which library" but "who makes the decisions" (fixed pipeline vs. autonomous reasoning loop).
-3. **Choose based on the stakes of the specific case**, with an explicit, comparable trade-off table rather than a default preference.
-4. **Keep the alternate method as a documented extension path**, not a discarded idea — shows the system's growth direction.
-5. **Optimize the chosen method** for latency, cost, and correctness rather than stopping at "it works."
-
-This is the same tactical sequence applied regardless of the specific title given — frame the problem, compare orchestration strategies on their trade-offs, justify the choice against the problem's actual risk profile, and then treat efficiency as a second, separate pass after correctness is established.
