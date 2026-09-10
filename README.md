@@ -15,7 +15,6 @@ A small autonomous agent that, given a stock ticker:
 | SQLAlchemy / SQL | `financial_agent/database.py` — ORM models, query history |
 | Flask / RESTful API | `financial_agent/api.py` — `/api/research`, `/api/calculate`, `/api/predict`, `/api/history` |
 | Streamlit | `streamlit_app.py` — deployable UI |
-| Git/GitHub | Push this folder as a repo for version control |
 
 `yfinance` is used only as the data pipe to get real market prices — there's no way to get live financial data without a data-source library, but every calculation, model, API route, and DB layer is custom code.
 
@@ -49,8 +48,4 @@ python -m financial_agent.api
 2. Go to https://share.streamlit.io → "New app".
 3. Point it at the repo, branch, and `streamlit_app.py` as the entry file.
 4. Deploy — `requirements.txt` is auto-installed.
-
-## Notes / next steps
-- The prediction model is intentionally simple (linear regression on recent SMAs) — explainable and easy to justify if asked about it, rather than a black-box model.
-- The Flask API and Streamlit app share the same `financial_agent` package, so there's one source of truth for the logic.
-- `research_agent.db` (SQLite) is created automatically on first run.
+    
