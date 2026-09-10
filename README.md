@@ -43,9 +43,5 @@ python -m financial_agent.api
 # then: curl http://localhost:5000/api/predict/AAPL
 ```
 
-## Deploy on Streamlit Community Cloud
-1. Push this folder to a GitHub repo.
-2. Go to https://share.streamlit.io → "New app".
-3. Point it at the repo, branch, and `streamlit_app.py` as the entry file.
-4. Deploy — `requirements.txt` is auto-installed.
+
     
